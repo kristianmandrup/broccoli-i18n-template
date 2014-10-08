@@ -1,0 +1,22 @@
+{
+  "name": "broccoli-i18n-template",
+  "description": "template filter to add i18n translation keys using relative path of template",
+  "version": "0.0.1",
+  "author": "Kristian Mandrup <kmandrup@gmail.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kristianmandrup/broccoli-i18n-template"
+  },
+  "keywords": [
+    "broccoli-plugin",
+    "template",
+    "javascript",
+    "i18n",
+    "translation"
+  ],
+  "dependencies": {
+    "broccoli-filter": "^0.1.6"
+  }
+}
