@@ -1,7 +1,6 @@
 # broccoli-i18n-template
 
-Broccoli filter that transforms templates
- so that relative i18n keys are resolved to the relative path of the template. 
+Broccoli filter that prefix relaive i18n keys in templates with relative path of template. 
  
 Provides Rails style *"Lazy" loading* of i18n translation keys, but compile time!
  
