@@ -16,7 +16,7 @@ function insert(str, index, value) {
   return str.substr(0, index) + value + str.substr(index);
 }
 
-var scan = function(original, regex, cb) {
+var scan = function(original, regex, replacer) {
   if (!regex.global) throw "regex must have 'global' flag set";
   return original.replace(regex, function(match, matches, offset, string) {
     console.log(match, matches, offset, string);
