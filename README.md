@@ -25,22 +25,20 @@ Advanced options config:
 var filterI18nTemplates = require('broccoli-i18n-template');
 tree = filterI18nTemplates(tree, {
   extensions: ['hbs', 'handlebars'],
-  compileFunction: 'Ember.Handlebars.compile'
+  i18nExpr: /t\s*['|"](\.)/
 });
 ```
 
-Given a file `template.hbs`
-
-```handlebars
-"sdfds {{t '.buttons.list'}} hello {{t \".buttons.print\"}}  {{t 'xup.xyau'}}"
-```
-
-this function will emit a template string where relative i18n keys are resolved using the relative path of template:
-
 Imagine we have a template at `bookings/edit.hbs`
 
-```js
-"sdfds {{t 'bookings.edit.buttons.list'}} hello {{t \"bookings.edit.buttons.print\"}}  {{t 'xup.xyau'}}"
+```handlebars
+something {{t '.buttons.list'}} hello {{t ".buttons.print"}}  {{t 'blip.plap'}}
+```
+
+This filter/transformer will emit a template string where relative i18n keys are resolved using the relative path of template:
+
+```handlebars
+something {{t 'bookings.edit.buttons.list'}} hello {{t "bookings.edit.buttons.print"}}  {{t 'blip.blap'}}
 ```
 
 It can also handle the format `bookings--edit.hbs` (since handlebars < 2.0 doesn't support nested templates or template names with `"/"`)  
@@ -51,8 +49,15 @@ It can also handle the format `bookings--edit.hbs` (since handlebars < 2.0 doesn
 
 A list of file extensions that this template filter applies to.
 
-default is `['hbs', 'handlebars']
+default is `['hbs', 'handlebars']`
 
-#### compileFunction (optional)
+#### i18nExpr (optional)
 
-Compile function (default is 'Ember.Handlebars.compile'`)
+Expression used to match and replace
+
+default is `/{{\s*t\s*['|"](\.)/`
+
+
+## TODO
+
+Perhaps use or extend [broccoli-replace](https://github.com/outaTiME/broccoli-replace)
