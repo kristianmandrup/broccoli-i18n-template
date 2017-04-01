@@ -17,6 +17,6 @@
     "translation"
   ],
   "dependencies": {
-    "broccoli-filter": "^0.1.6"
+    "broccoli-filter": "^1.2.4"
   }
 }
