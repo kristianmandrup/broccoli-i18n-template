@@ -1,5 +1,7 @@
 # broccoli-i18n-template
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kristianmandrup/broccoli-i18n-template.svg)](https://greenkeeper.io/)
+
 Broccoli filter that prefix relaive i18n keys in templates with relative path of template. 
  
 Provides Rails style *"Lazy" loading* of i18n translation keys, but compile time!
